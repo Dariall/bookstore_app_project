@@ -1,1 +1,0 @@
-# bookstore_app_project
