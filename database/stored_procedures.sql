@@ -82,25 +82,6 @@ BEGIN
 END;
 GO
 
-GO
-CREATE PROCEDURE GetFavorites
-    @user_id UNIQUEIDENTIFIER
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-    SELECT 
-        b.id,
-        b.title,
-        a.name AS author_name,
-        b.price,
-        b.image_url
-    FROM favorites f
-    INNER JOIN books b ON f.book_id = b.id
-    INNER JOIN authors a ON b.author_id = a.id
-    WHERE f.user_id = @user_id;
-END;
-GO
 
 GO
 CREATE PROCEDURE AddToCart
